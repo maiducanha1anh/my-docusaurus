@@ -45,7 +45,7 @@ node -v
 npm -v
 ```
 ---
-
+## 3.Các bước tạo Blog với Docusaurus
 
 
 Slide dưới đây mô tả toàn bộ quy trình xây dựng website,
