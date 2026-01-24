@@ -46,6 +46,7 @@
 <p>Kiểm tra bằng lệnh:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">node -v</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">npm -v</span><br></span></code></pre></div></div>
 <hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3các-bước-tạo-blog-với-docusaurus">3.Các bước tạo Blog với Docusaurus<a href="https://maiducanha1anh.github.io/my-docusaurus/blog/bai-viet-dau-tien#3c%C3%A1c-b%C6%B0%E1%BB%9Bc-t%E1%BA%A1o-blog-v%E1%BB%9Bi-docusaurus" class="hash-link" aria-label="Direct link to 3.Các bước tạo Blog với Docusaurus" title="Direct link to 3.Các bước tạo Blog với Docusaurus" translate="no">​</a></h2>
 <p>Slide dưới đây mô tả toàn bộ quy trình xây dựng website,
 từ bước khởi tạo project cho đến khi deploy (triển khai) website lên GitHub Pages.</p>
 <p>Xem slide hướng dẫn chi tiết tại đây:</p>
