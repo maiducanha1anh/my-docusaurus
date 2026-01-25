@@ -115,29 +115,13 @@ const config = {
               },
             ],
           },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discord.com/channels/@me',
-              },
-              {
-                label: 'X',
-                href: 'https://x.com/docusaurus',
-              },
-            ],
-          },
+                 
           {
             title: 'More',
             items: [
               {
                 label: 'Blog',
-                to: '/blog',
+                href: 'https://maiducanha1anh.github.io/my-docusaurus/',
               },
               {
                 label: 'GitHub',

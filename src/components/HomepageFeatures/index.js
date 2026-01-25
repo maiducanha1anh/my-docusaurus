@@ -4,32 +4,32 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Dễ sử dụng',
+    title: 'Giới Thiệu Bản Thân',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Mình là <b>Mai Đức Anh</b>, sinh viên CNTT, yêu thích lập trình ,
+        Web và xây dựng sản phẩm thực tế.
       </>
     ),
   },
   {
-    title: 'Tập chung vào nội dung',
+    title: 'Blog Viết Về Gì ?',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+       Chia sẻ kiến thức lập trình, ghi chép quá trình học tập
+        và kinh nghiệm làm dự án.
       </>
     ),
   },
   {
-    title: 'xây dựng bằng react',
+    title: 'Mục Tiêu',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Xây dựng một blog cá nhân nghiêm túc để học sâu,
+        chia sẻ và phát triển bản thân.
       </>
     ),
   },
