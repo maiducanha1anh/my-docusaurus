@@ -2,11 +2,329 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maiducanha1anh.github.io/my-docusaurus/blog</id>
     <title>Blog của ĐỨC ANH Blog</title>
-    <updated>2026-01-22T00:00:00.000Z</updated>
+    <updated>2026-02-02T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://maiducanha1anh.github.io/my-docusaurus/blog"/>
     <subtitle>Blog của ĐỨC ANH Blog</subtitle>
     <icon>https://maiducanha1anh.github.io/my-docusaurus/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Tìm hiểu về ngôn ngữ Python – Từ tổng quan đến cơ chế hoạt động bên trong]]></title>
+        <id>https://maiducanha1anh.github.io/my-docusaurus/blog/tim-hieu-python</id>
+        <link href="https://maiducanha1anh.github.io/my-docusaurus/blog/tim-hieu-python"/>
+        <updated>2026-02-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[1. Tìm hiểu chung về ngôn ngữ Python]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-tìm-hiểu-chung-về-ngôn-ngữ-python">1. Tìm hiểu chung về ngôn ngữ Python<a href="https://maiducanha1anh.github.io/my-docusaurus/blog/tim-hieu-python#1-t%C3%ACm-hi%E1%BB%83u-chung-v%E1%BB%81-ng%C3%B4n-ng%E1%BB%AF-python" class="hash-link" aria-label="Direct link to 1. Tìm hiểu chung về ngôn ngữ Python" title="Direct link to 1. Tìm hiểu chung về ngôn ngữ Python" translate="no">​</a></h2>
+<p>Python là một ngôn ngữ lập trình bậc cao (high-level language), được tạo ra bởi <strong>Guido van Rossum</strong> và chính thức ra mắt lần đầu vào năm <strong>1991</strong>. Python được thiết kế với triết lý <strong>đơn giản – dễ đọc – dễ học – dễ bảo trì</strong>, giúp lập trình viên tập trung nhiều hơn vào logic nghiệp vụ thay vì cú pháp phức tạp.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="đặc-điểm-nổi-bật-của-python">Đặc điểm nổi bật của Python<a href="https://maiducanha1anh.github.io/my-docusaurus/blog/tim-hieu-python#%C4%91%E1%BA%B7c-%C4%91i%E1%BB%83m-n%E1%BB%95i-b%E1%BA%ADt-c%E1%BB%A7a-python" class="hash-link" aria-label="Direct link to Đặc điểm nổi bật của Python" title="Direct link to Đặc điểm nổi bật của Python" translate="no">​</a></h3>
+<ul>
+<li class="">Cú pháp gần với ngôn ngữ tự nhiên, dễ đọc</li>
+<li class="">Ngôn ngữ <strong>đa mục đích</strong>: Web, AI, Data Science, Automation, Game, IoT</li>
+<li class="">Hệ sinh thái thư viện phong phú (NumPy, Pandas, TensorFlow, Django, Flask, ...)</li>
+<li class="">Chạy đa nền tảng: Windows, Linux, macOS</li>
+<li class="">Cộng đồng lớn, tài liệu đầy đủ</li>
+</ul>
+<p>Python đặc biệt phù hợp cho:</p>
+<ul>
+<li class="">Sinh viên IT</li>
+<li class="">Người mới học lập trình</li>
+<li class="">Các hệ thống cần phát triển nhanh (Rapid Development)</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-interpreted-vs-compiled--cơ-chế-thông-dịch-và-biên-dịch">2. Interpreted vs Compiled – Cơ chế thông dịch và biên dịch<a href="https://maiducanha1anh.github.io/my-docusaurus/blog/tim-hieu-python#2-interpreted-vs-compiled--c%C6%A1-ch%E1%BA%BF-th%C3%B4ng-d%E1%BB%8Bch-v%C3%A0-bi%C3%AAn-d%E1%BB%8Bch" class="hash-link" aria-label="Direct link to 2. Interpreted vs Compiled – Cơ chế thông dịch và biên dịch" title="Direct link to 2. Interpreted vs Compiled – Cơ chế thông dịch và biên dịch" translate="no">​</a></h2>
+<p>Khi nói đến cách một ngôn ngữ được thực thi, ta thường phân biệt hai khái niệm: <strong>Compiled</strong> và <strong>Interpreted</strong>.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="compiled-language-ngôn-ngữ-biên-dịch">Compiled Language (Ngôn ngữ biên dịch)<a href="https://maiducanha1anh.github.io/my-docusaurus/blog/tim-hieu-python#compiled-language-ng%C3%B4n-ng%E1%BB%AF-bi%C3%AAn-d%E1%BB%8Bch" class="hash-link" aria-label="Direct link to Compiled Language (Ngôn ngữ biên dịch)" title="Direct link to Compiled Language (Ngôn ngữ biên dịch)" translate="no">​</a></h3>
+<p>Ví dụ: C, C++, Go</p>
+<p><strong>Quy trình:</strong></p>
+<p>Source Code (.c) <br>
+↓ <br>
+Compiler <br>
+↓ <br>
+Machine Code (.exe) <br></p>
+<p>Đặc điểm:</p>
+<ul>
+<li class="">Biên dịch <strong>toàn bộ</strong> chương trình trước khi chạy</li>
+<li class="">Chạy nhanh, hiệu năng cao</li>
+<li class="">Phụ thuộc hệ điều hành và kiến trúc CPU</li>
+<li class="">Khó debug hơn</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="interpreted-language-ngôn-ngữ-thông-dịch">Interpreted Language (Ngôn ngữ thông dịch)<a href="https://maiducanha1anh.github.io/my-docusaurus/blog/tim-hieu-python#interpreted-language-ng%C3%B4n-ng%E1%BB%AF-th%C3%B4ng-d%E1%BB%8Bch" class="hash-link" aria-label="Direct link to Interpreted Language (Ngôn ngữ thông dịch)" title="Direct link to Interpreted Language (Ngôn ngữ thông dịch)" translate="no">​</a></h3>
+<p>Ví dụ: Python, JavaScript, PHP</p>
+<p>Quy trình:</p>
+<p>Source Code (.py) <br>
+↓ <br>
+Interpreter <br>
+↓ <br>
+Thực thi từng dòng <br></p>
+<p>Đặc điểm:</p>
+<ul>
+<li class="">Không cần tạo file <code>.exe</code></li>
+<li class="">Dễ debug, dễ học</li>
+<li class="">Thường chậm hơn compiled language</li>
+</ul>
+<p>⚠️ <strong>Python không hoàn toàn là interpreted thuần túy</strong> – điều này sẽ rõ hơn khi tìm hiểu CPython.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-workflow-của-python--từ-lúc-gõ-code-đến-khi-chương-trình-chạy">3. Workflow của Python – Từ lúc gõ code đến khi chương trình chạy<a href="https://maiducanha1anh.github.io/my-docusaurus/blog/tim-hieu-python#3-workflow-c%E1%BB%A7a-python--t%E1%BB%AB-l%C3%BAc-g%C3%B5-code-%C4%91%E1%BA%BFn-khi-ch%C6%B0%C6%A1ng-tr%C3%ACnh-ch%E1%BA%A1y" class="hash-link" aria-label="Direct link to 3. Workflow của Python – Từ lúc gõ code đến khi chương trình chạy" title="Direct link to 3. Workflow của Python – Từ lúc gõ code đến khi chương trình chạy" translate="no">​</a></h2>
+<p>Khi bạn chạy một file Python (<code>file.py</code>), Python không thực thi trực tiếp source code ngay lập tức.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="workflow-tổng-quát">Workflow tổng quát<a href="https://maiducanha1anh.github.io/my-docusaurus/blog/tim-hieu-python#workflow-t%E1%BB%95ng-qu%C3%A1t" class="hash-link" aria-label="Direct link to Workflow tổng quát" title="Direct link to Workflow tổng quát" translate="no">​</a></h3>
+<p>IDE <br>
+↓ (Save) <br>
+file.py (Ổ cứng) <br>
+↓ (Run) <br>
+Source Code (RAM) <br>
+↓ <br>
+Lexical Analysis → Tokens (RAM) <br>
+↓ <br>
+Parsing → AST (RAM) <br>
+↓ <br>
+Compile <br>
+↓ <br>
+Bytecode (RAM + có thể ghi .pyc vào disk) <br>
+↓ <br>
+Python Virtual Machine (RAM) <br>
+↓ <br>
+CPU thực thi <br></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="phân-tích-chi-tiết">Phân tích chi tiết<a href="https://maiducanha1anh.github.io/my-docusaurus/blog/tim-hieu-python#ph%C3%A2n-t%C3%ADch-chi-ti%E1%BA%BFt" class="hash-link" aria-label="Direct link to Phân tích chi tiết" title="Direct link to Phân tích chi tiết" translate="no">​</a></h3>
+<p><strong>Giai đoạn 1: Python đọc file.py vào bộ nhớ</strong>
+(Python Source Code → RAM)</p>
+<p>Khi bạn chạy:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">python main.py</span><br></span></code></pre></div></div>
+<p>Đầu vào :</p>
+<ul>
+<li class="">File.py</li>
+<li class="">Vị trí: ổ cứng</li>
+</ul>
+<p>Python làm gì?</p>
+<ul>
+<li class="">Hệ điều hành đọc nội dung file.py</li>
+<li class="">Nạp toàn bộ source code vào RAM</li>
+<li class="">Chuyển code sang dạng chuỗi ký tự (text)</li>
+</ul>
+<p>Đầu ra :</p>
+<ul>
+<li class="">Source code Python nằm trong RAM</li>
+<li class="">File.py vẫn còn trên ổ cứng, không bị thay đổi</li>
+</ul>
+<p>📌 Từ thời điểm này:</p>
+<p>Python chỉ làm việc với code trong RAM</p>
+<p>Ổ cứng chỉ còn vai trò lưu trữ</p>
+<hr>
+<p><strong>Giai đoạn 2: Lexical Analysis &amp; Parsing</strong>
+(Source Code → AST)</p>
+<p>2.1 Lexical Analysis (Phân tích từ vựng)</p>
+<p>Đầu vào :</p>
+<ul>
+<li class="">Source code (text) trong RAM
+Ví dụ :</li>
+</ul>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">a = 10</span><br></span></code></pre></div></div>
+<p>Python làm gì?</p>
+<p>Chia code thành các token</p>
+<p>a → IDENTIFIER</p>
+<p>= → OPERATOR</p>
+<p>10 → NUMBER</p>
+<p>📌 Lúc này:</p>
+<p>Python chưa hiểu logic</p>
+<p>Chỉ mới hiểu “ký hiệu”</p>
+<p>2.2 Parsing (Phân tích cú pháp)</p>
+<p>Đầu vào :</p>
+<ul>
+<li class="">Token stream (RAM)</li>
+</ul>
+<p>Python làm gì?</p>
+<ul>
+<li class="">Kiểm tra cú pháp có hợp lệ không</li>
+<li class="">Xây dựng Abstract Syntax Tree (AST)</li>
+</ul>
+<p>Ví dụ:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">a = 10</span><br></span></code></pre></div></div>
+<p>→ AST biểu diễn:</p>
+<ul>
+<li class="">Gán giá trị 10 cho biến a</li>
+</ul>
+<p>Đầu ra :</p>
+<ul>
+<li class="">AST</li>
+<li class="">Nằm trong RAM</li>
+</ul>
+<p>❌ Nếu sai cú pháp → SyntaxError (dừng tại đây)</p>
+<hr>
+<p><strong>Giai đoạn 3: Compile sang Bytecode</strong>
+(AST → Bytecode .pyc)</p>
+<p>Đầu vào :</p>
+<ul>
+<li class="">AST (RAM)</li>
+</ul>
+<p>Python làm gì?</p>
+<ul>
+<li class="">Biên dịch AST thành Bytecode</li>
+</ul>
+<p>Bytecode là:</p>
+<ul>
+<li class="">
+<p>Mã trung gian</p>
+</li>
+<li class="">
+<p>Không phải mã máy</p>
+</li>
+<li class="">
+<p>Không phụ thuộc hệ điều hành</p>
+</li>
+</ul>
+<p>Đầu ra :</p>
+<ul>
+<li class="">
+<p>Bytecode</p>
+</li>
+<li class="">
+<p>Nằm trong RAM</p>
+</li>
+</ul>
+<p>Đồng thời:</p>
+<ul>
+<li class="">
+<p>Python có thể ghi bytecode ra ổ cứng</p>
+</li>
+<li class="">
+<p>Dưới dạng file .pyc trong thư mục <strong>pycache</strong></p>
+</li>
+</ul>
+<p>📌 Quan trọng:</p>
+<p>.pyc không phải lúc nào cũng được tạo</p>
+<p>Dùng để:</p>
+<ul>
+<li class="">
+<p>Chạy nhanh hơn ở lần sau</p>
+</li>
+<li class="">
+<p>Tránh compile lại nếu code không đổi</p>
+</li>
+</ul>
+<hr>
+<p><strong>Giai đoạn 4: Python Virtual Machine (PVM)</strong>
+(Bytecode → Thực thi)
+Đầu vào :</p>
+<ul>
+<li class="">Bytecode (RAM)</li>
+</ul>
+<p>Python làm gì?</p>
+<ul>
+<li class="">Python Virtual Machine:</li>
+</ul>
+<p>-Đọc từng instruction trong bytecode</p>
+<p>-Thực thi lần lượt</p>
+<ul>
+<li class="">Mỗi instruction:</li>
+</ul>
+<ul>
+<li class="">
+<p>Gọi hàm C tương ứng trong CPython</p>
+</li>
+<li class="">
+<p>CPU thực hiện lệnh thật</p>
+</li>
+</ul>
+<p>Đầu ra :</p>
+<ul>
+<li class="">
+<p>Chương trình chạy</p>
+</li>
+<li class="">
+<p>Tạo biến, object trong heap</p>
+</li>
+<li class="">
+<p>In ra màn hình, ghi file, gọi API, …</p>
+</li>
+</ul>
+<p>📌 Lưu ý cực quan trọng:</p>
+<ul>
+<li class="">
+<p>PVM chạy trong RAM</p>
+</li>
+<li class="">
+<p>CPU không chạy source code Python</p>
+</li>
+<li class="">
+<p>CPU chỉ chạy mã máy của CPython</p>
+</li>
+</ul>
+<p>➡️ Vì vậy Python thường được mô tả là:</p>
+<blockquote>
+<p><strong>“Interpreted language with a compilation step”</strong></p>
+</blockquote>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-cpython-là-gì-vì-sao-nó-quan-trọng">4. CPython là gì? Vì sao nó quan trọng?<a href="https://maiducanha1anh.github.io/my-docusaurus/blog/tim-hieu-python#4-cpython-l%C3%A0-g%C3%AC-v%C3%AC-sao-n%C3%B3-quan-tr%E1%BB%8Dng" class="hash-link" aria-label="Direct link to 4. CPython là gì? Vì sao nó quan trọng?" title="Direct link to 4. CPython là gì? Vì sao nó quan trọng?" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cpython">CPython<a href="https://maiducanha1anh.github.io/my-docusaurus/blog/tim-hieu-python#cpython" class="hash-link" aria-label="Direct link to CPython" title="Direct link to CPython" translate="no">​</a></h3>
+<p>CPython là <strong>implementation phổ biến nhất của Python</strong>, được viết bằng ngôn ngữ <strong>C</strong>.</p>
+<p>👉 Khi bạn tải Python từ <code>python.org</code>, bạn đang sử dụng <strong>CPython</strong>.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="vai-trò-của-cpython">Vai trò của CPython<a href="https://maiducanha1anh.github.io/my-docusaurus/blog/tim-hieu-python#vai-tr%C3%B2-c%E1%BB%A7a-cpython" class="hash-link" aria-label="Direct link to Vai trò của CPython" title="Direct link to Vai trò của CPython" translate="no">​</a></h3>
+<ul>
+<li class="">Biên dịch Python code → Bytecode</li>
+<li class="">Thực thi bytecode thông qua PVM</li>
+<li class="">Quản lý bộ nhớ</li>
+<li class="">Cung cấp API cho C Extension</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="các-implementation-khác-của-python">Các implementation khác của Python<a href="https://maiducanha1anh.github.io/my-docusaurus/blog/tim-hieu-python#c%C3%A1c-implementation-kh%C3%A1c-c%E1%BB%A7a-python" class="hash-link" aria-label="Direct link to Các implementation khác của Python" title="Direct link to Các implementation khác của Python" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>PyPy</strong>: sử dụng JIT, có thể nhanh hơn CPython</li>
+<li class=""><strong>Jython</strong>: chạy trên JVM</li>
+<li class=""><strong>IronPython</strong>: chạy trên .NET</li>
+</ul>
+<p>➡️ Tuy nhiên, <strong>CPython vẫn là tiêu chuẩn mặc định</strong>.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-python-quản-lý-bộ-nhớ-như-thế-nào">5. Python quản lý bộ nhớ như thế nào?<a href="https://maiducanha1anh.github.io/my-docusaurus/blog/tim-hieu-python#5-python-qu%E1%BA%A3n-l%C3%BD-b%E1%BB%99-nh%E1%BB%9B-nh%C6%B0-th%E1%BA%BF-n%C3%A0o" class="hash-link" aria-label="Direct link to 5. Python quản lý bộ nhớ như thế nào?" title="Direct link to 5. Python quản lý bộ nhớ như thế nào?" translate="no">​</a></h2>
+<p>Python <strong>tự động quản lý bộ nhớ</strong>, lập trình viên không cần cấp phát hay giải phóng thủ công.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="các-vùng-bộ-nhớ-chính">Các vùng bộ nhớ chính<a href="https://maiducanha1anh.github.io/my-docusaurus/blog/tim-hieu-python#c%C3%A1c-v%C3%B9ng-b%E1%BB%99-nh%E1%BB%9B-ch%C3%ADnh" class="hash-link" aria-label="Direct link to Các vùng bộ nhớ chính" title="Direct link to Các vùng bộ nhớ chính" translate="no">​</a></h3>
+<ol>
+<li class="">
+<p><strong>Stack Memory</strong></p>
+<ul>
+<li class="">Lưu biến cục bộ</li>
+<li class="">Function call</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Heap Memory</strong></p>
+<ul>
+<li class="">Lưu object (list, dict, class instance, …)</li>
+<li class="">Do CPython quản lý</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="object-trong-python-gồm">Object trong Python gồm<a href="https://maiducanha1anh.github.io/my-docusaurus/blog/tim-hieu-python#object-trong-python-g%E1%BB%93m" class="hash-link" aria-label="Direct link to Object trong Python gồm" title="Direct link to Object trong Python gồm" translate="no">​</a></h3>
+<ul>
+<li class="">Giá trị (value)</li>
+<li class="">Kiểu dữ liệu (type)</li>
+<li class="">Reference count (số lượng tham chiếu)</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="6-garbage-collection-trong-python">6. Garbage Collection trong Python<a href="https://maiducanha1anh.github.io/my-docusaurus/blog/tim-hieu-python#6-garbage-collection-trong-python" class="hash-link" aria-label="Direct link to 6. Garbage Collection trong Python" title="Direct link to 6. Garbage Collection trong Python" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="reference-counting">Reference Counting<a href="https://maiducanha1anh.github.io/my-docusaurus/blog/tim-hieu-python#reference-counting" class="hash-link" aria-label="Direct link to Reference Counting" title="Direct link to Reference Counting" translate="no">​</a></h3>
+<p>Python sử dụng <strong>reference counting</strong> làm cơ chế chính.</p>
+<ul>
+<li class="">Mỗi object có số lượng reference</li>
+<li class="">Khi reference = 0 → object bị giải phóng</li>
+</ul>
+<p>Ví dụ:</p>
+<div class="language-python codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-python codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">a </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">b </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> a</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">del</span><span class="token plain"> a</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">del</span><span class="token plain"> b  </span><span class="token comment" style="color:#999988;font-style:italic"># lúc này object list mới bị giải phóng</span><br></span></code></pre></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="7-tổng-kết">7. Tổng kết<a href="https://maiducanha1anh.github.io/my-docusaurus/blog/tim-hieu-python#7-t%E1%BB%95ng-k%E1%BA%BFt" class="hash-link" aria-label="Direct link to 7. Tổng kết" title="Direct link to 7. Tổng kết" translate="no">​</a></h2>
+<p>Tham khảo slide chi tiết tại đây :</p>
+<ul>
+<li class="">🔗 <a href="https://www.canva.com/design/DAG_3zWkweQ/ZLs9aa_VVotSC-yXgsAZOw/edit" target="_blank" rel="noopener noreferrer" class="">https://www.canva.com/design/DAG_3zWkweQ/ZLs9aa_VVotSC-yXgsAZOw/edit</a></li>
+</ul>
+<p>Python là ngôn ngữ có cú pháp đơn giản, dễ học, nhưng <strong>bên trong có cơ chế hoạt động tương đối phức tạp</strong>. Khi chạy một chương trình Python, source code không được thực thi trực tiếp mà phải trải qua nhiều giai đoạn như phân tích cú pháp, biên dịch sang bytecode và thực thi thông qua <strong>Python Virtual Machine (PVM)</strong>.</p>
+<p>Python không phải là interpreted thuần túy, mà là <strong>ngôn ngữ thông dịch có bước biên dịch trung gian</strong>. <strong>CPython</strong> giữ vai trò trung tâm trong việc biên dịch, thực thi và quản lý bộ nhớ. Nhờ cơ chế <strong>quản lý bộ nhớ tự động và Garbage Collection</strong>, Python giúp lập trình viên tập trung vào logic thay vì xử lý tài nguyên.</p>
+<p>Việc hiểu rõ workflow và cơ chế bên trong của Python giúp lập trình viên viết code hiệu quả hơn, debug tốt hơn và có nền tảng để học sâu về Python trong các hệ thống lớn.</p>]]></content>
+        <author>
+            <name>Mai Duc Anh</name>
+            <uri>https://github.com/maiducanha1anh</uri>
+        </author>
+        <category label="python" term="python"/>
+        <category label="interpreted" term="interpreted"/>
+        <category label="compiled" term="compiled"/>
+        <category label="cpython" term="cpython"/>
+        <category label="memory-management" term="memory-management"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hướng dẫn tạo Blog cá nhân bằng Docusaurus]]></title>
         <id>https://maiducanha1anh.github.io/my-docusaurus/blog/bai-viet-dau-tien</id>

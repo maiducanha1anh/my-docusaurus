@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkmy_docusaurus=globalThis.webpackChunkmy_docusaurus||[]).push([[472],{5513(s){s.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"H\u01b0\u1edbng d\u1eabn t\u1ea1o Blog c\xe1 nh\xe2n b\u1eb1ng Docusaurus","permalink":"/my-docusaurus/blog/bai-viet-dau-tien","unlisted":false,"date":"2026-01-22T00:00:00.000Z"}]}')}}]);
