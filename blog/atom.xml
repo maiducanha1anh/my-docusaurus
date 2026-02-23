@@ -332,91 +332,180 @@ Khi chạy:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Class Student</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  field: age</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  constructor</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Class Main</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  method: main()</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  bytecode</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  constant pool</span><br></span></code></pre></div></div>
 <p>⚠️ Chưa có object nào trong Heap.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="iii-16-bước-runtime-theo-java-visualizer">III. 16 BƯỚC RUNTIME THEO JAVA VISUALIZER<a href="https://maiducanha1anh.github.io/my-docusaurus/blog/phan-tich-JVM#iii-16-b%C6%B0%E1%BB%9Bc-runtime-theo-java-visualizer" class="hash-link" aria-label="Direct link to III. 16 BƯỚC RUNTIME THEO JAVA VISUALIZER" title="Direct link to III. 16 BƯỚC RUNTIME THEO JAVA VISUALIZER" translate="no">​</a></h2>
-<p>STEP 1 — Tạo Main Thread</p>
+<p>STEP 1 — JVM khởi tạo process</p>
+<p><img decoding="async" loading="lazy" alt="Bước 1" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/anh1-8d797b92001cdb0f68a914c856e6d512.png" width="1082" height="664" class="img_ev3q"></p>
+<p>Tại sao có main:7?</p>
+<ul>
+<li class="">Vì dòng 7 là lệnh đầu tiên trong main</li>
+</ul>
+<p>Hệ điều hành tạo một PROCESS mới</p>
+<p>Process này chứa:</p>
+<ul>
+<li class="">Heap</li>
+<li class="">Method Area</li>
+<li class="">Stack</li>
+<li class="">PC Register</li>
+<li class="">Native Method Stack</li>
+</ul>
+<p>Đây gọi là JVM Runtime Data Areas</p>
+<p>ClassLoader bắt đầu hoạt động</p>
+<p>JVM không chạy ngay main.</p>
+<p>Nó phải:</p>
+<ul>
+<li class="">Load class Main</li>
+<li class="">Load class Student</li>
+</ul>
+<p>Cơ chế:
+Application ClassLoader sẽ:</p>
+<ul>
+<li class="">Đọc file Main.class</li>
+<li class="">Đưa bytecode vào Method Area</li>
+</ul>
+<hr>
+<p>STEP 2 — Tạo Main Thread</p>
+<p><img decoding="async" loading="lazy" alt="Bước 2" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/anh2-bd49c7b8fde1d370632f02529e810909.png" width="1087" height="630" class="img_ev3q"></p>
 <p>JVM tạo:</p>
 <ul>
 <li class="">Main Thread</li>
 <li class="">Stack cho thread</li>
 <li class="">Frame main()</li>
 </ul>
+<p>Tại sao có main:7?</p>
+<ul>
+<li class="">Vì dòng 7 là lệnh đầu tiên trong main</li>
+</ul>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Stack</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">└── Frame: main()</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">     args → String[]</span><br></span></code></pre></div></div>
 <p>Heap: rỗng</p>
 <hr>
-<p>STEP 2 — new Student()</p>
-<p>Bytecode:</p>
+<p>STEP 3 — new Student()</p>
+<p><img decoding="async" loading="lazy" alt="Bước 3" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/anh3-a12aa427f184bba4757c88832a500233.png" width="1146" height="612" class="img_ev3q"></p>
+<p>JVM đọc bytecode dòng này:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">new</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">dup</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">invokespecial</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">astore</span><br></span></code></pre></div></div>
 <p>Điều xảy ra:</p>
 <ul>
 <li class="">Cấp phát object trong Heap</li>
-<li class="">age = 0 (default)</li>
+<li class="">age = 0 (là giá trị mặc định của int)</li>
 <li class="">Reference được push lên Operand Stack</li>
 </ul>
 <p>Heap:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Student instance</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> age = 0</span><br></span></code></pre></div></div>
 <hr>
-<p>STEP 3 — Gọi constructor</p>
-<p>invokespecial gọi <code>&lt;init&gt;</code></p>
+<p>STEP 4 — Gọi constructor</p>
+<p><img decoding="async" loading="lazy" alt="Bước 4" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/anh4-c0c1bf03fae55ea6798c85793b4330c9.png" width="1078" height="620" class="img_ev3q"></p>
+<p>invokespecial gọi <code>&lt;init&gt;</code>
+frames <code>&lt;init&gt;</code> : 1 nghĩa là frame 1
+this : là object trên heap</p>
 <p>JVM tạo Frame mới:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Stack</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">└── Frame `&lt;init&gt;`</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">└── Frame main</span><br></span></code></pre></div></div>
 <hr>
-<p>STEP 4 — Constructor return</p>
-<p>Frame <code>&lt;init&gt;</code> bị pop.</p>
+<p>STEP 5 — Constructor return</p>
+<p><img decoding="async" loading="lazy" alt="Bước 5" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/anh5-2127bdd041415fa4d29e78e37df02d1a.png" width="1056" height="614" class="img_ev3q"></p>
+<p>Sau đó constructor kết thúc → Frame <code>&lt;init&gt;</code> bị pop.</p>
 <hr>
-<p>STEP 5 — Gán cho s1</p>
+<p>STEP 6 — Gán cho s1</p>
+<p><img decoding="async" loading="lazy" alt="Bước 6" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/anh6-82e43dbe0cd6170aadfbfc21ff814247.png" width="1058" height="608" class="img_ev3q"></p>
 <p>Reference lưu vào Local Variable Array index 1.</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Frame main:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> s1 → Student instance</span><br></span></code></pre></div></div>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Frame main:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> s1 → Student instance (object trên Heap)</span><br></span></code></pre></div></div>
 <hr>
-<p>STEP 6 — s1.age = 20</p>
-<p>Execution Engine:</p>
-<p>aload_1</p>
-<p>bipush 20</p>
-<p>putfield</p>
+<p>STEP 7 — s1.age = 20</p>
+<p><img decoding="async" loading="lazy" alt="Bước 7" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/anh7-819643b7f75c1812ce1623d5345a3b23.png" width="1145" height="608" class="img_ev3q"></p>
+<p>JVM làm gì?</p>
+<ul>
+<li class="">Tìm reference s1 trong Stack</li>
+<li class="">Theo địa chỉ sang Heap</li>
+<li class="">Tìm field age</li>
+<li class="">hi giá trị 20</li>
+</ul>
 <p>Heap:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Student</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> age = 20</span><br></span></code></pre></div></div>
+<p>Stack:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">main:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   s1 → object</span><br></span></code></pre></div></div>
 <hr>
-<p>STEP 7 — Student s2 = s1</p>
-<p>Copy reference.</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">s1 ──┐</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">     │</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">s2 ──┘</span><br></span></code></pre></div></div>
-<p>Không tạo object mới</p>
+<p>STEP 8 — Student s2 = s1</p>
+<p><img decoding="async" loading="lazy" alt="Bước 8" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/anh8-c55dc9835ab4effc662a94989135b4e3.png" width="1066" height="609" class="img_ev3q"></p>
+<p>JVM KHÔNG tạo object mới.</p>
+<p>Nó chỉ:</p>
+<ul>
+<li class="">Copy giá trị reference của s1</li>
+<li class="">Gán cho s2</li>
+</ul>
+<p>Stack:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">main:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   s1 → object</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   s2 → object   (cùng 1 object)</span><br></span></code></pre></div></div>
+<p>Heap:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Student instance</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   age = 20</span><br></span></code></pre></div></div>
+<p>=&gt; s1 và s2 trỏ cùng 1 object.</p>
 <hr>
-<p>STEP 8 — s2.age = 25</p>
-<p>putfield ghi đè Heap.</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Student</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> age = 25</span><br></span></code></pre></div></div>
-<hr>
-<p>STEP 9 - int x = 10
-Primitive lưu trực tiếp trong Stack Frame.</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">x = 10</span><br></span></code></pre></div></div>
-<hr>
-<p>STEP 10 — int y = x</p>
-<p>Copy value.</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">x = 10</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">y = 10</span><br></span></code></pre></div></div>
-<hr>
-<p>STEP 11 — Chuẩn bị println đầu tiên</p>
-<p>Biểu thức:</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">"s1.age = " + s1.age</span><br></span></code></pre></div></div>
+<p>STEP 9 — s2.age = 25</p>
+<p><img decoding="async" loading="lazy" alt="Bước 9" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/anh9-d991fc4921d955e8ac9074a8b7c65726.png" width="1169" height="622" class="img_ev3q"></p>
 <p>JVM:</p>
 <ul>
-<li class="">Lấy 25 từ Heap</li>
-<li class="">Tạo String mới trong Heap</li>
+<li class="">Lấy reference từ s2</li>
+<li class="">Trỏ tới object</li>
+<li class="">Đổi age = 25</li>
 </ul>
+<p>Heap:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Student instance</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> age = 25</span><br></span></code></pre></div></div>
+<p>Vì s1 và s2 cùng trỏ một object
+→ cả hai đều thấy age = 25</p>
 <hr>
-<p>STEP 12 — Gọi println()</p>
-<p>Frame mới được push:</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Frame println()</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Frame main()</span><br></span></code></pre></div></div>
-<p>Sau khi in → pop.</p>
+<p>STEP 10 - int x = 10</p>
+<p><img decoding="async" loading="lazy" alt="Bước 10" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/anh10-0908fb6abbc380a6842e529b05284ef7.png" width="1146" height="615" class="img_ev3q"></p>
+<p>Primitive lưu trực tiếp trong Stack Frame.</p>
+<p>Stack</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">main:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   s1 → object</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   s2 → object</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   x = 10</span><br></span></code></pre></div></div>
+<p>Heap không thay đổi</p>
 <hr>
-<p>STEP 13 — println thứ 2</p>
-<p>Tạo String mới → push frame → pop.</p>
+<p>STEP 11 — int y = x</p>
+<p><img decoding="async" loading="lazy" alt="Bước 11" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/anh11-0fc26aea5eb89724527437fe3ce085ab.png" width="1064" height="612" class="img_ev3q"></p>
+<p>Đây là Copy value.</p>
+<p>Stack</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">main:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   s1 → object</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   s2 → object</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   x = 10</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   y = 10   (bản sao độc lập)</span><br></span></code></pre></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="không-có-reference-ở-đây">Không có reference ở đây<a href="https://maiducanha1anh.github.io/my-docusaurus/blog/phan-tich-JVM#kh%C3%B4ng-c%C3%B3-reference-%E1%BB%9F-%C4%91%C3%A2y" class="hash-link" aria-label="Direct link to Không có reference ở đây" title="Direct link to Không có reference ở đây" translate="no">​</a></h2>
+<p>STEP 12 — Chuẩn bị println đầu tiên</p>
+<p><img decoding="async" loading="lazy" alt="Bước 12" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/anh12-7e94349b337e5db5744434c908aba4e7.png" width="1047" height="611" class="img_ev3q"></p>
+<p>JVM:</p>
+<ul>
+<li class="">Lấy reference s1</li>
+<li class="">Truy cập object trên heap</li>
+<li class="">Lấy age = 25</li>
+<li class="">In ra</li>
+</ul>
+<p>Biểu thức:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">"s1.age = " + s1.age</span><br></span></code></pre></div></div>
+<hr>
+<p>STEP 13 — Gọi println()</p>
+<p><img decoding="async" loading="lazy" alt="Bước 12" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/anh12-7e94349b337e5db5744434c908aba4e7.png" width="1047" height="611" class="img_ev3q"></p>
+<div class="language-java codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-java codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">System.out.println("s2.age = " + s2.age);</span><br></span></code></pre></div></div>
+<ul>
+<li class="">s2 trỏ cùng object</li>
+<li class="">age = 25</li>
+</ul>
+<p>Output:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">s2.age = 25</span><br></span></code></pre></div></div>
 <hr>
 <p>STEP 14 — println x</p>
-<p>Push frame → pop.</p>
+<p><img decoding="async" loading="lazy" alt="Bước 14" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/anh14-8ff9f882abf19837dbfa8e7030732e3d.png" width="1030" height="602" class="img_ev3q"></p>
+<ul>
+<li class="">Lấy x từ stack</li>
+<li class="">Giá trị = 10</li>
+</ul>
+<p>Output:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">x = 10</span><br></span></code></pre></div></div>
 <hr>
 <p>STEP 15 — println y</p>
-<p>Push frame → pop.</p>
+<p><img decoding="async" loading="lazy" alt="Bước 15" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/anh15-1791761491b80c7f054d306fdb6bb4ca.png" width="1044" height="603" class="img_ev3q"></p>
+<ul>
+<li class="">Lấy x từ stack</li>
+<li class="">Giá trị = 10</li>
+</ul>
+<p>Output:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">y = 10</span><br></span></code></pre></div></div>
 <hr>
 <p>STEP 16 — main() kết thúc</p>
+<p><img decoding="async" loading="lazy" alt="Bước 16" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/anh16-ebc62a855c57cb80cd676975c5dc0b2f.png" width="1040" height="605" class="img_ev3q"></p>
 <p>Frame main bị pop.</p>
 <p>Stack rỗng.</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Student instance (age = 25)</span><br></span></code></pre></div></div>
 <p>Object trong Heap không còn reference.</p>
 <ul>
 <li class="">Garbage Collector sẽ dọn sau.</li>
