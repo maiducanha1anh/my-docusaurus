@@ -398,12 +398,12 @@ this : là object trên heap</p>
 <hr>
 <p>STEP 5 — Constructor return</p>
 <p><img decoding="async" loading="lazy" alt="Bước 5" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/anh5-2127bdd041415fa4d29e78e37df02d1a.png" width="1056" height="614" class="img_ev3q"></p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sau-đó-constructor-kết-thúc--frame-init-bị-popbước-5">Sau đó constructor kết thúc → Frame <code>&lt;init&gt;</code> bị pop.
-<img decoding="async" loading="lazy" alt="Bước 5" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/buoc5-44727d4189f03b66eb787ebf7ad93737.png" width="485" height="292" class="img_ev3q"><a href="https://maiducanha1anh.github.io/my-docusaurus/blog/phan-tich-JVM#sau-%C4%91%C3%B3-constructor-k%E1%BA%BFt-th%C3%BAc--frame-init-b%E1%BB%8B-popb%C6%B0%E1%BB%9Bc-5" class="hash-link" aria-label="Direct link to sau-đó-constructor-kết-thúc--frame-init-bị-popbước-5" title="Direct link to sau-đó-constructor-kết-thúc--frame-init-bị-popbước-5" translate="no">​</a></h2>
+<p>Sau đó constructor kết thúc → Frame <code>&lt;init&gt;</code> bị pop.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bước-5"><img decoding="async" loading="lazy" alt="Bước 5" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/buoc5-44727d4189f03b66eb787ebf7ad93737.png" width="485" height="292" class="img_ev3q"><a href="https://maiducanha1anh.github.io/my-docusaurus/blog/phan-tich-JVM#b%C6%B0%E1%BB%9Bc-5" class="hash-link" aria-label="Direct link to bước-5" title="Direct link to bước-5" translate="no">​</a></h2>
 <p>STEP 6 — Gán cho s1</p>
 <p><img decoding="async" loading="lazy" alt="Bước 6" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/anh6-82e43dbe0cd6170aadfbfc21ff814247.png" width="1058" height="608" class="img_ev3q"></p>
-<p>Reference lưu vào Local Variable Array index 1.
-<img decoding="async" loading="lazy" alt="Bước 6" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/buoc6-9701f28a33c5d52cb4c5c899c259fd3a.png" width="449" height="262" class="img_ev3q"></p>
+<p>Reference lưu vào Local Variable Array index 1.</p>
+<p><img decoding="async" loading="lazy" alt="Bước 6" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/buoc6-9701f28a33c5d52cb4c5c899c259fd3a.png" width="449" height="262" class="img_ev3q"></p>
 <hr>
 <p>STEP 7 — s1.age = 20</p>
 <p><img decoding="async" loading="lazy" alt="Bước 7" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/anh7-819643b7f75c1812ce1623d5345a3b23.png" width="1145" height="608" class="img_ev3q"></p>
@@ -424,8 +424,8 @@ this : là object trên heap</p>
 <li class="">Copy giá trị reference của s1</li>
 <li class="">Gán cho s2</li>
 </ul>
-<p><img decoding="async" loading="lazy" alt="Bước 8" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/buoc8-6425f81cd871302f4ec91656e06dd6c2.png" width="458" height="273" class="img_ev3q">
-=&gt; s1 và s2 trỏ cùng 1 object.</p>
+<p><img decoding="async" loading="lazy" alt="Bước 8" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/buoc8-6425f81cd871302f4ec91656e06dd6c2.png" width="458" height="273" class="img_ev3q"></p>
+<p>=&gt; s1 và s2 trỏ cùng 1 object.</p>
 <hr>
 <p>STEP 9 — s2.age = 25</p>
 <p><img decoding="async" loading="lazy" alt="Bước 9" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/anh9-d991fc4921d955e8ac9074a8b7c65726.png" width="1169" height="622" class="img_ev3q"></p>
@@ -448,8 +448,8 @@ Heap không thay đổi</p>
 <p>STEP 11 — int y = x</p>
 <p><img decoding="async" loading="lazy" alt="Bước 11" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/anh11-0fc26aea5eb89724527437fe3ce085ab.png" width="1064" height="612" class="img_ev3q"></p>
 <p>Đây là Copy value.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bước-11không-có-reference-ở-đây"><img decoding="async" loading="lazy" alt="Bước 11" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/buoc11-253a5599db961e4e45927c7eb0294245.png" width="466" height="280" class="img_ev3q">
-Không có reference ở đây<a href="https://maiducanha1anh.github.io/my-docusaurus/blog/phan-tich-JVM#b%C6%B0%E1%BB%9Bc-11kh%C3%B4ng-c%C3%B3-reference-%E1%BB%9F-%C4%91%C3%A2y" class="hash-link" aria-label="Direct link to bước-11không-có-reference-ở-đây" title="Direct link to bước-11không-có-reference-ở-đây" translate="no">​</a></h2>
+<p><img decoding="async" loading="lazy" alt="Bước 11" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/buoc11-253a5599db961e4e45927c7eb0294245.png" width="466" height="280" class="img_ev3q"></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="không-có-reference-ở-đây">Không có reference ở đây<a href="https://maiducanha1anh.github.io/my-docusaurus/blog/phan-tich-JVM#kh%C3%B4ng-c%C3%B3-reference-%E1%BB%9F-%C4%91%C3%A2y" class="hash-link" aria-label="Direct link to Không có reference ở đây" title="Direct link to Không có reference ở đây" translate="no">​</a></h2>
 <p>STEP 12 — Chuẩn bị println đầu tiên</p>
 <p><img decoding="async" loading="lazy" alt="Bước 12" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/anh12-7e94349b337e5db5744434c908aba4e7.png" width="1047" height="611" class="img_ev3q"></p>
 <p>JVM:</p>
