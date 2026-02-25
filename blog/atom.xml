@@ -383,9 +383,9 @@ Application ClassLoader sẽ:</p>
 <p><img decoding="async" loading="lazy" alt="Bước 3" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/anh3-a12aa427f184bba4757c88832a500233.png" width="1146" height="612" class="img_ev3q"></p>
 <p>JVM đọc bytecode dòng này:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">new  -&gt; push reference lên operand stack</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">dup  -&gt; copy reference</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">invokespecial -&gt; dùng 1 reference gọi constructor</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">astore -&gt; lưu reference còn lại vào Local Variable Array</span><br></span></code></pre></div></div>
-<p>invokespecial gọi <code>&lt;init&gt;</code>
-frames <code>&lt;init&gt;</code> : 1 nghĩa là frame 1
-this : là object trên heap</p>
+<p>invokespecial gọi <code>&lt;init&gt;</code></p>
+<p>frames <code>&lt;init&gt;</code> : 1 nghĩa là frame 1</p>
+<p>this : là object trên heap</p>
 <p>Điều xảy ra:</p>
 <ul>
 <li class="">Cấp phát object trong Heap</li>

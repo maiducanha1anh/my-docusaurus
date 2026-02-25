@@ -5,7 +5,7 @@
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">One post tagged with &quot;execution-engine&quot; | Blog của ĐỨC ANH</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://maiducanha1anh.github.io/my-docusaurus/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://maiducanha1anh.github.io/my-docusaurus/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://maiducanha1anh.github.io/my-docusaurus/blog/tags/execution-engine"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" property="og:title" content="One post tagged with &quot;execution-engine&quot; | Blog của ĐỨC ANH"><meta data-rh="true" name="docusaurus_tag" content="blog_tags_posts"><meta data-rh="true" name="docsearch:docusaurus_tag" content="blog_tags_posts"><link data-rh="true" rel="icon" href="/my-docusaurus/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://maiducanha1anh.github.io/my-docusaurus/blog/tags/execution-engine"><link data-rh="true" rel="alternate" href="https://maiducanha1anh.github.io/my-docusaurus/blog/tags/execution-engine" hreflang="en"><link data-rh="true" rel="alternate" href="https://maiducanha1anh.github.io/my-docusaurus/blog/tags/execution-engine" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/my-docusaurus/blog/rss.xml" title="Blog của ĐỨC ANH RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/my-docusaurus/blog/atom.xml" title="Blog của ĐỨC ANH Atom Feed"><link rel="stylesheet" href="/my-docusaurus/assets/css/styles.9072f9ea.css">
-<script src="/my-docusaurus/assets/js/runtime~main.15b809d5.js" defer="defer"></script>
+<script src="/my-docusaurus/assets/js/runtime~main.0a380227.js" defer="defer"></script>
 <script src="/my-docusaurus/assets/js/main.dc338f70.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -124,9 +124,9 @@ Application ClassLoader sẽ:</p>
 <p><img decoding="async" loading="lazy" alt="Bước 3" src="/my-docusaurus/assets/images/anh3-a12aa427f184bba4757c88832a500233.png" width="1146" height="612" class="img_ev3q"></p>
 <p>JVM đọc bytecode dòng này:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">new  -&gt; push reference lên operand stack</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">dup  -&gt; copy reference</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">invokespecial -&gt; dùng 1 reference gọi constructor</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">astore -&gt; lưu reference còn lại vào Local Variable Array</span><br></span></code></pre></div></div>
-<p>invokespecial gọi <code>&lt;init&gt;</code>
-frames <code>&lt;init&gt;</code> : 1 nghĩa là frame 1
-this : là object trên heap</p>
+<p>invokespecial gọi <code>&lt;init&gt;</code></p>
+<p>frames <code>&lt;init&gt;</code> : 1 nghĩa là frame 1</p>
+<p>this : là object trên heap</p>
 <p>Điều xảy ra:</p>
 <ul>
 <li class="">Cấp phát object trong Heap</li>
