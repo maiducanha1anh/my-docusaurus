@@ -393,8 +393,8 @@ this : là object trên heap</p>
 <hr>
 <p>STEP 4 — Gọi constructor</p>
 <p><img decoding="async" loading="lazy" alt="Bước 4" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/anh4-c0c1bf03fae55ea6798c85793b4330c9.png" width="1078" height="620" class="img_ev3q"></p>
-<p>JVM tạo Frame mới:
-![Bước 4](/img/buoc 4.png)</p>
+<p>JVM tạo Frame mới:</p>
+<p><img decoding="async" loading="lazy" alt="Bước 4" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/buoc4-d4606d2484a20cc2c5817a2027e56214.png" width="448" height="336" class="img_ev3q"></p>
 <hr>
 <p>STEP 5 — Constructor return</p>
 <p><img decoding="async" loading="lazy" alt="Bước 5" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/anh5-2127bdd041415fa4d29e78e37df02d1a.png" width="1056" height="614" class="img_ev3q"></p>
