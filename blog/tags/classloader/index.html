@@ -5,7 +5,7 @@
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">One post tagged with &quot;classloader&quot; | Blog của ĐỨC ANH</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://maiducanha1anh.github.io/my-docusaurus/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://maiducanha1anh.github.io/my-docusaurus/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://maiducanha1anh.github.io/my-docusaurus/blog/tags/classloader"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" property="og:title" content="One post tagged with &quot;classloader&quot; | Blog của ĐỨC ANH"><meta data-rh="true" name="docusaurus_tag" content="blog_tags_posts"><meta data-rh="true" name="docsearch:docusaurus_tag" content="blog_tags_posts"><link data-rh="true" rel="icon" href="/my-docusaurus/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://maiducanha1anh.github.io/my-docusaurus/blog/tags/classloader"><link data-rh="true" rel="alternate" href="https://maiducanha1anh.github.io/my-docusaurus/blog/tags/classloader" hreflang="en"><link data-rh="true" rel="alternate" href="https://maiducanha1anh.github.io/my-docusaurus/blog/tags/classloader" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/my-docusaurus/blog/rss.xml" title="Blog của ĐỨC ANH RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/my-docusaurus/blog/atom.xml" title="Blog của ĐỨC ANH Atom Feed"><link rel="stylesheet" href="/my-docusaurus/assets/css/styles.9072f9ea.css">
-<script src="/my-docusaurus/assets/js/runtime~main.0a380227.js" defer="defer"></script>
+<script src="/my-docusaurus/assets/js/runtime~main.5915649c.js" defer="defer"></script>
 <script src="/my-docusaurus/assets/js/main.dc338f70.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -57,16 +57,20 @@ Khi chạy:</p>
 </ul>
 <p>✔ Resolve</p>
 <ul>
-<li class="">
-<p>Chuyển symbolic reference → direct reference
-3, Initialization</p>
-</li>
-<li class="">
-<p>Chạy static block (nếu có)</p>
-</li>
-<li class="">
-<p>Khởi tạo static variable</p>
-</li>
+<li class="">Chuyển symbolic reference → direct reference
+Giải thích thêm phần resolve
+có symbolic reference nó chỉ là thông tin dạng chữ</li>
+</ul>
+<p>irect reference là:
+-Con trỏ (pointer) thật</p>
+<ul>
+<li class="">Hoặc offset trong Method Area
+-Hoặc địa chỉ method trong runtime</li>
+</ul>
+<p>3, Initialization</p>
+<ul>
+<li class="">Chạy static block (nếu có)</li>
+<li class="">Khởi tạo static variable</li>
 </ul>
 <p>Sau giai đoạn này</p>
 <p>Trong Method Area có:</p>
@@ -111,28 +115,28 @@ Application ClassLoader sẽ:</p>
 <p>JVM tạo:</p>
 <ul>
 <li class="">Main Thread</li>
-<li class="">Stack cho thread</li>
+<li class="">Stack cho thread (Mỗi thread có một Stack riêng, và JVM tạo một Stack Frame)</li>
 <li class="">Frame main()</li>
 </ul>
 <p>Tại sao có main:7?</p>
 <ul>
-<li class="">Vì dòng 7 là lệnh đầu tiên trong main
-<img decoding="async" loading="lazy" alt="Bước 2" src="/my-docusaurus/assets/images/buoc2-9d6ffef55ce26d104b37ad1225b20636.png" width="445" height="249" class="img_ev3q"></li>
+<li class="">Vì dòng 7 là lệnh đầu tiên trong main</li>
 </ul>
+<p><img decoding="async" loading="lazy" alt="Bước 2" src="/my-docusaurus/assets/images/buoc2-a1bc2f8556c06b520b52e82e407bc198.png" width="496" height="304" class="img_ev3q"></p>
 <hr>
 <p>STEP 3 — new Student()</p>
 <p><img decoding="async" loading="lazy" alt="Bước 3" src="/my-docusaurus/assets/images/anh3-a12aa427f184bba4757c88832a500233.png" width="1146" height="612" class="img_ev3q"></p>
-<p>JVM đọc bytecode dòng này:</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">new  -&gt; push reference lên operand stack</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">dup  -&gt; copy reference</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">invokespecial -&gt; dùng 1 reference gọi constructor</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">astore -&gt; lưu reference còn lại vào Local Variable Array</span><br></span></code></pre></div></div>
-<p>invokespecial gọi <code>&lt;init&gt;</code></p>
-<p>frames <code>&lt;init&gt;</code> : 1 nghĩa là frame 1</p>
-<p>this : là object trên heap</p>
-<p>Điều xảy ra:</p>
+<p>JVM gặp new Student().</p>
 <ul>
-<li class="">Cấp phát object trong Heap</li>
-<li class="">age = 0 (là giá trị mặc định của int)</li>
-<li class="">Reference được push lên Operand Stack</li>
+<li class="">JVM cấp phát một object trong Heap</li>
+<li class="">Field age được gán mặc định = 0</li>
 </ul>
+<p>Stack lúc này:</p>
+<ul>
+<li class="">Vẫn chỉ có frame main().</li>
+</ul>
+<p>frames <code>&lt;init&gt;</code> : 1 nghĩa là frame 1
+this : là object trên heap</p>
 <p><img decoding="async" loading="lazy" alt="Bước 3" src="/my-docusaurus/assets/images/buoc3-5526777bbd3323e378752d70967d88ac.png" width="464" height="293" class="img_ev3q"></p>
 <hr>
 <p>STEP 4 — Gọi constructor</p>
@@ -143,10 +147,14 @@ Application ClassLoader sẽ:</p>
 <p>STEP 5 — Constructor return</p>
 <p><img decoding="async" loading="lazy" alt="Bước 5" src="/my-docusaurus/assets/images/anh5-2127bdd041415fa4d29e78e37df02d1a.png" width="1056" height="614" class="img_ev3q"></p>
 <p>Sau đó constructor kết thúc → Frame <code>&lt;init&gt;</code> bị pop.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bước-5"><img decoding="async" loading="lazy" alt="Bước 5" src="/my-docusaurus/assets/images/buoc5-44727d4189f03b66eb787ebf7ad93737.png" width="485" height="292" class="img_ev3q"><a href="#bước-5" class="hash-link" aria-label="Direct link to bước-5" title="Direct link to bước-5" translate="no">​</a></h2>
+<p><img decoding="async" loading="lazy" alt="Bước 5" src="/my-docusaurus/assets/images/buoc5-44727d4189f03b66eb787ebf7ad93737.png" width="485" height="292" class="img_ev3q"></p>
+<hr>
 <p>STEP 6 — Gán cho s1</p>
 <p><img decoding="async" loading="lazy" alt="Bước 6" src="/my-docusaurus/assets/images/anh6-82e43dbe0cd6170aadfbfc21ff814247.png" width="1058" height="608" class="img_ev3q"></p>
-<p>Reference lưu vào Local Variable Array index 1.</p>
+<ul>
+<li class="">Nhưng operand stack chứa reference trả về từ new.</li>
+<li class="">Sau đó reference được lưu vào biến s1.</li>
+</ul>
 <p><img decoding="async" loading="lazy" alt="Bước 6" src="/my-docusaurus/assets/images/buoc6-9701f28a33c5d52cb4c5c899c259fd3a.png" width="449" height="262" class="img_ev3q"></p>
 <hr>
 <p>STEP 7 — s1.age = 20</p>
@@ -156,7 +164,7 @@ Application ClassLoader sẽ:</p>
 <li class="">Tìm reference s1 trong Stack</li>
 <li class="">Theo địa chỉ sang Heap</li>
 <li class="">Tìm field age</li>
-<li class="">hi giá trị 20</li>
+<li class="">sửa giá trị = 20</li>
 </ul>
 <p><img decoding="async" loading="lazy" alt="Bước 7" src="/my-docusaurus/assets/images/buoc7-cfe762a4c6e78fe977a0555ab2ca0139.png" width="455" height="265" class="img_ev3q"></p>
 <hr>
@@ -176,7 +184,7 @@ Application ClassLoader sẽ:</p>
 <p>JVM:</p>
 <ul>
 <li class="">Lấy reference từ s2</li>
-<li class="">Trỏ tới object</li>
+<li class="">Trỏ tới object trong Heap</li>
 <li class="">Đổi age = 25</li>
 </ul>
 <p><img decoding="async" loading="lazy" alt="Bước 9" src="/my-docusaurus/assets/images/buoc9-31ff4feeeb5c23b109618b4a7f54a366.png" width="457" height="272" class="img_ev3q"></p>
@@ -185,33 +193,29 @@ Application ClassLoader sẽ:</p>
 <hr>
 <p>STEP 10 - int x = 10</p>
 <p><img decoding="async" loading="lazy" alt="Bước 10" src="/my-docusaurus/assets/images/anh10-0908fb6abbc380a6842e529b05284ef7.png" width="1146" height="615" class="img_ev3q"></p>
-<p>Primitive lưu trực tiếp trong Stack Frame.</p>
-<p><img decoding="async" loading="lazy" alt="Bước 10" src="/my-docusaurus/assets/images/buoc10-779d84202d31f28f31497881385d1f60.png" width="471" height="274" class="img_ev3q">
-Heap không thay đổi</p>
+<p>Primitive lưu trực tiếp trong Stack Frame x = 10</p>
+<p><img decoding="async" loading="lazy" alt="Bước 10" src="/my-docusaurus/assets/images/buoc10-779d84202d31f28f31497881385d1f60.png" width="471" height="274" class="img_ev3q"></p>
+<p>Heap không thay đổi</p>
 <hr>
 <p>STEP 11 — int y = x</p>
 <p><img decoding="async" loading="lazy" alt="Bước 11" src="/my-docusaurus/assets/images/anh11-0fc26aea5eb89724527437fe3ce085ab.png" width="1064" height="612" class="img_ev3q"></p>
-<p>Đây là Copy value.</p>
+<p>Đây là Copy giá trị y = 10 vì y = x</p>
 <p><img decoding="async" loading="lazy" alt="Bước 11" src="/my-docusaurus/assets/images/buoc11-253a5599db961e4e45927c7eb0294245.png" width="466" height="280" class="img_ev3q"></p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="không-có-reference-ở-đây">Không có reference ở đây<a href="#không-có-reference-ở-đây" class="hash-link" aria-label="Direct link to Không có reference ở đây" title="Direct link to Không có reference ở đây" translate="no">​</a></h2>
+<p>Không có reference ở đây</p>
+<hr>
 <p>STEP 12 — Chuẩn bị println đầu tiên</p>
 <p><img decoding="async" loading="lazy" alt="Bước 12" src="/my-docusaurus/assets/images/anh12-7e94349b337e5db5744434c908aba4e7.png" width="1047" height="611" class="img_ev3q"></p>
-<p>JVM:</p>
+<p>JVM làm:</p>
+<p>-Lấy dữ liệu từ Stack hoặc Heap</p>
 <ul>
-<li class="">Lấy reference s1</li>
-<li class="">Truy cập object trên heap</li>
-<li class="">Lấy age = 25</li>
-<li class="">In ra</li>
+<li class="">Đẩy vào operand stack</li>
+<li class="">Gọi phương thức println()</li>
 </ul>
 <p><img decoding="async" loading="lazy" alt="Bước 12" src="/my-docusaurus/assets/images/buoc12-bbdabb23882824b1e435d6ed8b022c5f.png" width="480" height="273" class="img_ev3q"></p>
 <hr>
 <p>STEP 13 — Gọi println()</p>
 <p><img decoding="async" loading="lazy" alt="Bước 13" src="/my-docusaurus/assets/images/anh13-66dad18d4aa5d0b15888b58f8a50f792.png" width="1026" height="598" class="img_ev3q"></p>
-<div class="language-java codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-java codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">System.out.println(&quot;s2.age = &quot; + s2.age);</span><br></span></code></pre></div></div>
-<ul>
-<li class="">s2 trỏ cùng object</li>
-<li class="">age = 25</li>
-</ul>
+<p>Tương tự bước 12</p>
 <p><img decoding="async" loading="lazy" alt="Bước 13" src="/my-docusaurus/assets/images/buoc13-1f01e5de5689c93333685ec18d9935f5.png" width="498" height="326" class="img_ev3q"></p>
 <hr>
 <p>STEP 14 — println x</p>
@@ -232,7 +236,13 @@ Heap không thay đổi</p>
 <hr>
 <p>STEP 16 — main() kết thúc</p>
 <p><img decoding="async" loading="lazy" alt="Bước 16" src="/my-docusaurus/assets/images/anh16-ebc62a855c57cb80cd676975c5dc0b2f.png" width="1040" height="605" class="img_ev3q"></p>
-<p>Frame main bị pop.</p>
+<p>Stack lúc gọi println:
+Frame println()
+Frame main()</p>
+<p>Khi in xong:</p>
+<ul>
+<li class="">Frame println() bị pop.</li>
+</ul>
 <p>Stack rỗng.</p>
 <p><img decoding="async" loading="lazy" alt="Bước 16" src="/my-docusaurus/assets/images/buoc16-ecf43ba553cea08d9a5978ee75825bda.png" width="506" height="271" class="img_ev3q"></p>
 <p>Object trong Heap không còn reference.</p>
