@@ -295,7 +295,7 @@ Khi chạy:</p>
 <p><img decoding="async" loading="lazy" alt="Bước 1" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/daura-f7b9a36ab416ece02aa4245eb5713643.png" width="638" height="264" class="img_ev3q"></p>
 <ul>
 <li class="">Thay đổi trạng thái bộ nhớ</li>
-<li class="">Object( là một thực thể được tạo ra từ một class) được tạo trong Heap(à vùng nhớ trong JVM dùng để lưu trữ object.)</li>
+<li class="">Object( là một thực thể được tạo ra từ một class) được tạo trong Heap(là vùng nhớ trong JVM dùng để lưu trữ object.)</li>
 <li class="">Stack Frame(Stack Frame là một khối dữ liệu được tạo ra mỗi khi một method được gọi.Nó nằm trong Java Stack của từng thread) được push/pop</li>
 </ul>
 <p>Console in ra:</p>
@@ -361,7 +361,7 @@ Giải thích thêm phần resolve</li>
 <p><img decoding="async" loading="lazy" alt="Bước 1" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/byecode-53383ec3021596a728f070d30b543259.png" width="1147" height="799" class="img_ev3q"></p>
 <p>Constructor là hàm đặc biệt của class, được dùng để khởi tạo object khi ta tạo object bằng từ khóa new</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="iii-16-bước-runtime-theo-java-visualizer">III. 16 BƯỚC RUNTIME THEO JAVA VISUALIZER<a href="https://maiducanha1anh.github.io/my-docusaurus/blog/phan-tich-JVM#iii-16-b%C6%B0%E1%BB%9Bc-runtime-theo-java-visualizer" class="hash-link" aria-label="Direct link to III. 16 BƯỚC RUNTIME THEO JAVA VISUALIZER" title="Direct link to III. 16 BƯỚC RUNTIME THEO JAVA VISUALIZER" translate="no">​</a></h2>
-<p>STEP 1 — JVM khởi tạo process(à một chương trình đang chạy trong hệ điều hành)</p>
+<p>STEP 1 — JVM khởi tạo process(là một chương trình đang chạy trong hệ điều hành)</p>
 <p><img decoding="async" loading="lazy" alt="Bước 1" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/anh1-8d797b92001cdb0f68a914c856e6d512.png" width="1082" height="664" class="img_ev3q"></p>
 <p>Tại sao có main:7?</p>
 <ul>
@@ -369,7 +369,7 @@ Giải thích thêm phần resolve</li>
 <li class="">JVM chỉ biết bytecode index</li>
 <li class="">main:7 là do Java Visualizer map bytecode → source line</li>
 </ul>
-<p>PC Register(à một vùng nhớ nhỏ dùng để lưu địa chỉ của bytecode mà thread đang thực thi) trỏ tới bytecode đầu tiên của method main. Công cụ hiển thị nó thành main:7 vì đó là dòng source tương ứng.</p>
+<p>PC Register(là một vùng nhớ nhỏ dùng để lưu địa chỉ của bytecode mà thread đang thực thi) trỏ tới bytecode đầu tiên của method main. Công cụ hiển thị nó thành main:7 vì đó là dòng source tương ứng.</p>
 <p>Hệ điều hành tạo một PROCESS mới</p>
 <p>Process này chứa:</p>
 <ul>
@@ -420,12 +420,13 @@ Application ClassLoader sẽ:</p>
 <p><code>&lt;init&gt;</code> là tên đặc biệt trong bytecode dành cho constructor.
 Trong frame <code>&lt;init&gt;</code>, local variable đầu tiên luôn là<!-- -->:this<!-- -->
 this là<!-- -->:Reference<!-- --> tới object đang được khởi tạo.</p>
-<p>Khi thực thi lệnh Student s1 = new Student();, JVM nhìn thấy bytecode tạo object mới — nó cấp phát một vùng nhớ trong Heap cho một Student với field age mặc định là 0, push reference tới object này lên operand stack của frame main(), sau đó nó gọi constructor <code>&lt;init&gt;</code> bằng cách tạo một stack frame mới cho <code>&lt;init&gt;</code> và push vào Stack. Frame <code>&lt;init&gt;</code> chứa một biến local đầu tiên là this</p>
+<p>Khi thực thi lệnh Student s1 = new Student();, JVM nhìn thấy bytecode tạo object mới — nó cấp phát một vùng nhớ trong Heap cho một Student với field age mặc định là 0, push reference tới object này lên operand stack của frame main().</p>
 <p><img decoding="async" loading="lazy" alt="Bước 3" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/buoc3-ce1fcb1ac960652c120a150d24e279a0.png" width="448" height="300" class="img_ev3q"></p>
 <hr>
 <p>STEP 4 — Gọi constructor</p>
 <p><img decoding="async" loading="lazy" alt="Bước 4" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/anh4-c0c1bf03fae55ea6798c85793b4330c9.png" width="1078" height="620" class="img_ev3q"></p>
-<p>this là reference trỏ tới object mới trong Heap, giúp constructor biết đối tượng nào đang được khởi tạo.</p>
+<p>jvm gọi constructor <code>&lt;init&gt;</code> bằng cách tạo một stack frame mới cho <code>&lt;init&gt;</code> và push vào Stack. Frame <code>&lt;init&gt;</code> chứa một biến local đầu tiên là this
+this là reference trỏ tới object mới trong Heap, giúp constructor biết đối tượng nào đang được khởi tạo.</p>
 <p><img decoding="async" loading="lazy" alt="Bước 4" src="https://maiducanha1anh.github.io/my-docusaurus/assets/images/buoc4-7393f594821d21b62e99067ec4aab089.png" width="444" height="288" class="img_ev3q"></p>
 <hr>
 <p>STEP 5 — Constructor return</p>
