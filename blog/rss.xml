@@ -922,24 +922,12 @@ CPU execution <br></p>
             <category>memory-management</category>
         </item>
         <item>
-            <title><![CDATA[huong-dan-docusaurus]]></title>
-            <link>https://maiducanha1anh.github.io/my-docusaurus/blog/2026/01/22/huong-dan-docusaurus</link>
-            <guid>https://maiducanha1anh.github.io/my-docusaurus/blog/2026/01/22/huong-dan-docusaurus</guid>
+            <title><![CDATA[A Guide to Building a Personal Blog with Docusaurus]]></title>
+            <link>https://maiducanha1anh.github.io/my-docusaurus/blog/first-post</link>
+            <guid>https://maiducanha1anh.github.io/my-docusaurus/blog/first-post</guid>
             <pubDate>Thu, 22 Jan 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[----]]></description>
-            <content:encoded><![CDATA[<hr>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="slug-first-posttitle-a-guide-to-building-a-personal-blog-with-docusaurusauthors-admintags-docusaurus-blog-guide-programming">slug: first-post
-title: A Guide to Building a Personal Blog with Docusaurus
-authors: [admin]
-tags: [docusaurus, blog, guide, programming]<a href="https://maiducanha1anh.github.io/my-docusaurus/blog/2026/01/22/huong-dan-docusaurus#slug-first-posttitle-a-guide-to-building-a-personal-blog-with-docusaurusauthors-admintags-docusaurus-blog-guide-programming" class="hash-link" aria-label="Direct link to slug: first-post
-title: A Guide to Building a Personal Blog with Docusaurus
-authors: [admin]
-tags: [docusaurus, blog, guide, programming]" title="Direct link to slug: first-post
-title: A Guide to Building a Personal Blog with Docusaurus
-authors: [admin]
-tags: [docusaurus, blog, guide, programming]" translate="no">​</a></h2>
-<h1>This is my first blog post written with Docusaurus.</h1>
-<p>In this post, I will walk through the detailed steps for creating a personal blog using <strong>Docusaurus</strong> – a powerful framework for building documentation websites and static blogs.</p>
+            <description><![CDATA[In this post, I will walk through the detailed steps for creating a personal blog using Docusaurus – a powerful framework for building documentation websites and static blogs.]]></description>
+            <content:encoded><![CDATA[<p>In this post, I will walk through the detailed steps for creating a personal blog using <strong>Docusaurus</strong> – a powerful framework for building documentation websites and static blogs.</p>
 <p>This post is intended for:</p>
 <ul>
 <li class="">IT students</li>
@@ -947,7 +935,7 @@ tags: [docusaurus, blog, guide, programming]" translate="no">​</a></h2>
 <li class="">Anyone who wants a professional personal blog</li>
 </ul>
 <hr>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-what-is-docusaurus">1. What is Docusaurus?<a href="https://maiducanha1anh.github.io/my-docusaurus/blog/2026/01/22/huong-dan-docusaurus#1-what-is-docusaurus" class="hash-link" aria-label="Direct link to 1. What is Docusaurus?" title="Direct link to 1. What is Docusaurus?" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-what-is-docusaurus">1. What is Docusaurus?<a href="https://maiducanha1anh.github.io/my-docusaurus/blog/first-post#1-what-is-docusaurus" class="hash-link" aria-label="Direct link to 1. What is Docusaurus?" title="Direct link to 1. What is Docusaurus?" translate="no">​</a></h2>
 <p>Docusaurus is an open-source framework developed by Facebook, designed for creating:</p>
 <ul>
 <li class="">Personal blogs</li>
@@ -962,7 +950,7 @@ tags: [docusaurus, blog, guide, programming]" translate="no">​</a></h2>
 <li class="">Straightforward deployment to GitHub Pages</li>
 </ul>
 <hr>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-environment-setup">2. Environment Setup<a href="https://maiducanha1anh.github.io/my-docusaurus/blog/2026/01/22/huong-dan-docusaurus#2-environment-setup" class="hash-link" aria-label="Direct link to 2. Environment Setup" title="Direct link to 2. Environment Setup" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-environment-setup">2. Environment Setup<a href="https://maiducanha1anh.github.io/my-docusaurus/blog/first-post#2-environment-setup" class="hash-link" aria-label="Direct link to 2. Environment Setup" title="Direct link to 2. Environment Setup" translate="no">​</a></h2>
 <p>Prerequisites:</p>
 <ul>
 <li class="">Node.js (version &gt;= 18)</li>
@@ -971,7 +959,7 @@ tags: [docusaurus, blog, guide, programming]" translate="no">​</a></h2>
 <p>Verify your installation with:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">node -v</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">npm -v</span><br></span></code></pre></div></div>
 <hr>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-steps-to-build-a-blog-with-docusaurus">3. Steps to Build a Blog with Docusaurus<a href="https://maiducanha1anh.github.io/my-docusaurus/blog/2026/01/22/huong-dan-docusaurus#3-steps-to-build-a-blog-with-docusaurus" class="hash-link" aria-label="Direct link to 3. Steps to Build a Blog with Docusaurus" title="Direct link to 3. Steps to Build a Blog with Docusaurus" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-steps-to-build-a-blog-with-docusaurus">3. Steps to Build a Blog with Docusaurus<a href="https://maiducanha1anh.github.io/my-docusaurus/blog/first-post#3-steps-to-build-a-blog-with-docusaurus" class="hash-link" aria-label="Direct link to 3. Steps to Build a Blog with Docusaurus" title="Direct link to 3. Steps to Build a Blog with Docusaurus" translate="no">​</a></h2>
 <p>The slide below illustrates the complete workflow for building and deploying the website,
 from project initialization all the way to deploying on GitHub Pages.</p>
 <p>View the detailed step-by-step slide here:</p>
@@ -980,7 +968,7 @@ from project initialization all the way to deploying on GitHub Pages.</p>
 </ul>
 <p>(The slide will open in a new tab for a clearer, full-screen view)</p>
 <hr>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-conclusion">4. Conclusion<a href="https://maiducanha1anh.github.io/my-docusaurus/blog/2026/01/22/huong-dan-docusaurus#4-conclusion" class="hash-link" aria-label="Direct link to 4. Conclusion" title="Direct link to 4. Conclusion" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-conclusion">4. Conclusion<a href="https://maiducanha1anh.github.io/my-docusaurus/blog/first-post#4-conclusion" class="hash-link" aria-label="Direct link to 4. Conclusion" title="Direct link to 4. Conclusion" translate="no">​</a></h2>
 <p>After reviewing the slide, beginners should be able to:</p>
 <ul>
 <li class="">Initialize a Docusaurus project</li>
@@ -989,6 +977,10 @@ from project initialization all the way to deploying on GitHub Pages.</p>
 <li class="">Deploy the website using GitHub Pages</li>
 </ul>
 <hr>]]></content:encoded>
+            <category>Docusaurus</category>
+            <category>blog</category>
+            <category>guide</category>
+            <category>programming</category>
         </item>
     </channel>
 </rss>
