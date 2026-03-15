@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="g3" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#63b3ed"/>
+      <stop offset="100%" stop-color="#4299e1"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="none"/>
+  <circle cx="200" cy="120" r="60" fill="url(#g3)" opacity="0.15"/>
+  <circle cx="200" cy="120" r="35" fill="none" stroke="#63b3ed" stroke-width="6"/>
+  <circle cx="200" cy="120" r="18" fill="#63b3ed"/>
+  <line x1="200" y1="120" x2="260" y2="80" stroke="#63b3ed" stroke-width="6"/>
+  <polygon points="260,80 250,82 255,92" fill="#63b3ed"/>
+  <text x="200" y="260" font-size="20" text-anchor="middle" fill="#e2e8f0" font-family="Arial">
+    My Goal
+  </text>
+</svg>
