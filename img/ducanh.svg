@@ -1,0 +1,23 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="200" viewBox="0 0 800 200">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00c6ff"/>
+      <stop offset="100%" stop-color="#0072ff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="200" fill="white"/>
+
+  <!-- Accent bar -->
+  <rect x="60" y="80" width="12" height="40" fill="url(#grad)" rx="4"/>
+
+  <!-- Main text -->
+  <text x="100" y="120"
+        font-family="Segoe UI, Arial, sans-serif"
+        font-size="80"
+        font-weight="700"
+        fill="url(#grad)">
+        DucAnh
+  </text>
+</svg>
