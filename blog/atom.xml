@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="atom.xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maiducanha1anh.github.io/my-docusaurus/blog</id>
-    <title>Blog của ĐỨC ANH Blog</title>
+    <title>Duc Anh's Blog Blog</title>
     <updated>2026-11-02T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://maiducanha1anh.github.io/my-docusaurus/blog"/>
-    <subtitle>Blog của ĐỨC ANH Blog</subtitle>
+    <subtitle>Duc Anh's Blog Blog</subtitle>
     <icon>https://maiducanha1anh.github.io/my-docusaurus/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Understanding the Java Platform – Execution Flow & JVM Architecture]]></title>
